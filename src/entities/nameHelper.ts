@@ -58,6 +58,14 @@ export class NameHelper {
     static endsWithNumberWord(name: string) {
         return /\s\d+$/.test(name);
     }
+
+    static standardText(text: string): string {
+        return standardText(text);
+    }
+
+    static atonic(text: string): string {
+        return atonic(text);
+    }
 }
 
 function removeSymbolsFromText(text: string): string {
