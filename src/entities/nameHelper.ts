@@ -59,8 +59,8 @@ export class NameHelper {
         return /\s\d+$/.test(name);
     }
 
-    static standardText(text: string): string {
-        return standardText(text);
+    static standardText(text: string, lang: string): string {
+        return standardText(text, lang);
     }
 
     static atonic(text: string): string {
