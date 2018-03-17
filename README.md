@@ -1,3 +1,3 @@
-# @textactor/domain
+# @entitizer/domain
 
-Core TextActor nodejs module.
+Entitizer`s domain nodejs module.
