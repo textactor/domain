@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "atonic": "^1.0.4",
+    "slugify": "^1.2.9",
     "standard-text": "^0.1.1"
   }
 }
