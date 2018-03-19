@@ -48,6 +48,19 @@ export class NameHelper {
         return name.toUpperCase() === name;
     }
 
+    static findAbbr(names: string[]): string {
+        if (!names || names.length === 0) {
+            return;
+        }
+
+        const abbrs = names.filter(item => item.length > 1 && NameHelper.isAbbr(item))
+            .sort((a, b) => a.length - b.length);
+
+        if (abbrs.length) {
+            return abbrs[0];
+        }
+    }
+
     /**
      * Removes any symbols from a text, expect: &+-
      * @param name Name to process

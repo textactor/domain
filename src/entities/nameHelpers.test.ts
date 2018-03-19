@@ -9,6 +9,11 @@ test('#isAbbr', t => {
     t.is(NameHelper.isAbbr('A ABBR'), true, 'A ABBR is an abbreviation')
 })
 
+test('#findAbbr', t => {
+    t.is(NameHelper.findAbbr(['ABBR', 'Abbr', 'ABBR a', 'ABB']), 'ABB')
+    t.is(NameHelper.findAbbr(['ABBR', 'Abbr', 'ABBR a', 'A']), 'ABBR')
+})
+
 test('#endsWithNumberWord', t => {
     t.is(NameHelper.endsWithNumberWord('iPhone6'), false, 'iPhone6 is not ending with a number word')
     t.is(NameHelper.endsWithNumberWord('iPhone 6'), true, 'iPhone 6 is ending with a number word')
