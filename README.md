@@ -1,3 +1,3 @@
-# @entitizer/domain
+# @textactor/domain
 
-Entitizer`s domain nodejs module.
+Textactor`s domain nodejs module.

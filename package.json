@@ -1,5 +1,5 @@
 {
-  "name": "@entitizer/domain",
+  "name": "@textactor/domain",
   "version": "0.0.1",
   "description": "Text Actor code module",
   "main": "./lib/index.js",
@@ -21,18 +21,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/entitizer/domain.git"
+    "url": "git+https://github.com/textactor/domain.git"
   },
   "keywords": [
     "domain",
-    "entitizer"
+    "textactor"
   ],
   "author": "Dumitru Cantea",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/entitizer/domain/issues"
+    "url": "https://github.com/textactor/domain/issues"
   },
-  "homepage": "https://github.com/entitizer/domain#readme",
+  "homepage": "https://github.com/textactor/domain#readme",
   "devDependencies": {
     "@types/node": "latest",
     "ava": "^0.23.0",
