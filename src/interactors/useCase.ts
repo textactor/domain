@@ -1,5 +1,5 @@
 
-const debug = require('debug')('textactor-domain')
+const debug = require('debug')('textactor:domain')
 
 export interface IUseCase<DATA, RESULT, OPTIONS> {
     execute(data: DATA, options?: OPTIONS): Promise<RESULT>
