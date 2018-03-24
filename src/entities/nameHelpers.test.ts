@@ -22,11 +22,18 @@ test('#endsWithNumberWord', t => {
 test('#removeSymbols', t => {
     t.is(NameHelper.removeSymbols('Async (node)'), 'Async node')
     t.is(NameHelper.removeSymbols('iPhone #5'), 'iPhone 5')
-    t.is(NameHelper.removeSymbols('iPhone $^@^%*#^*(#()*#_*_)(@_)(@ &+-'), 'iPhone&+-')
+    t.is(NameHelper.removeSymbols('iPhone & -= &&'), 'iPhone')
+    t.is(NameHelper.removeSymbols('iPhone $^@^%*#^*(#()*#_*_)(@_)(@ &+-iPad'), 'iPhone&iPad')
 })
 
 test('#formatUniqueName', t => {
     t.is(NameHelper.formatUniqueName('Async (node)', 'en'), 'async node')
     t.is(NameHelper.formatUniqueName('iPhone #5', '5'), 'iphone 5')
     t.is(NameHelper.formatUniqueName('Ștefan Trăiește', 'ro'), 'stefan traieste')
+})
+
+test('#isIrregular', t => {
+    t.is(NameHelper.isIrregular('Async (node)'), false)
+    t.is(NameHelper.isIrregular('iPhone alfa'), true)
+    t.is(NameHelper.isIrregular('Ștefan Trăiește'), false)
 })
