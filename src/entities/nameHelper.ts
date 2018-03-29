@@ -65,11 +65,29 @@ export class NameHelper {
             return;
         }
 
+        const calcRank = (name: string) => {
+            let rank = 0;
+
+            if (name.length < 3) {
+                rank--;
+            }
+            if (/\./.test(name)) {
+                rank--;
+            }
+            if (/\s/.test(name)) {
+                rank--;
+            }
+
+            return rank;
+        }
+
         const abbrs = names.filter(item => item.length > 1 && NameHelper.isAbbr(item))
-            .sort((a, b) => a.length - b.length);
+            .sort((a, b) => a.length - b.length)
+            .map(name => ({ name, rank: calcRank(name) }))
+            .sort((a, b) => b.rank - a.rank);
 
         if (abbrs.length) {
-            return abbrs[0];
+            return abbrs[0].name;
         }
     }
 
@@ -99,6 +117,32 @@ export class NameHelper {
 
     static rootName(name: string, lang: string): string {
         return formatRootName(name, lang);
+    }
+
+    /**
+     * Normalize a name: iPhone 5 => iphone 5; CIA => CIA; Chișinău => chișinău
+     * @param name Name to normalize
+     * @param lang Language code
+     */
+    public static normalizeName(name: string, lang: string) {
+        name = name.trim().replace(/\s+/g, ' ').trim();
+        lang = lang.trim().toLowerCase();
+        name = NameHelper.removeSymbols(name);
+        name = NameHelper.standardText(name, lang);
+
+        if (NameHelper.isAbbr(name)) {
+            return name;
+        }
+
+        return name.toLowerCase();
+    }
+
+    public static countWords(name: string): number {
+        name = name && name.trim();
+        if (!name || name.length < 1) {
+            return 0;
+        }
+        return name.split(/\s+/g).length;
     }
 }
 

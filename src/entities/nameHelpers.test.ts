@@ -10,8 +10,10 @@ test('#isAbbr', t => {
 })
 
 test('#findAbbr', t => {
-    t.is(NameHelper.findAbbr(['ABBR', 'Abbr', 'ABBR a', 'ABB']), 'ABB')
-    t.is(NameHelper.findAbbr(['ABBR', 'Abbr', 'ABBR a', 'A']), 'ABBR')
+    t.is(NameHelper.findAbbr(['ABBR', 'Abbr', 'ABBR a', 'ABB', 'ABB B', 'AB', 'A.B']), 'ABB')
+    t.is(NameHelper.findAbbr(['ABBR', 'Abbr', 'ABBR a', 'A', 'AB BR']), 'ABBR')
+    t.is(NameHelper.findAbbr(['PD', 'PDM', 'PDRM', 'PD RM']), 'PDM')
+    t.is(NameHelper.findAbbr(['US', 'USA', 'U.S', 'U.S.', 'U.S.A']), 'USA')
 })
 
 test('#endsWithNumberWord', t => {
@@ -36,4 +38,12 @@ test('#isIrregular', t => {
     t.is(NameHelper.isIrregular('Async (node)'), false)
     t.is(NameHelper.isIrregular('iPhone alfa'), true)
     t.is(NameHelper.isIrregular('Ștefan Trăiește'), false)
+})
+
+test('#countWords', t => {
+    t.is(NameHelper.countWords('Async (node)'), 2)
+    t.is(NameHelper.countWords('iPhone alfa'), 2)
+    t.is(NameHelper.countWords('Ștefan'), 1)
+    t.is(NameHelper.countWords('iPhone 2'), 2)
+    t.is(NameHelper.countWords(''), 0)
 })
