@@ -1,6 +1,6 @@
 {
   "name": "@textactor/domain",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Text Actor code module",
   "main": "./lib/index.js",
   "types": "./types/index.d.ts",
@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "atonic": "^1.0.4",
-    "root-name": "^0.1.1",
     "slugify": "^1.2.9",
     "standard-text": "^0.1.1"
   }

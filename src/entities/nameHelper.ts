@@ -3,8 +3,6 @@ const atonic = require('atonic');
 const standardText = require('standard-text');
 const slugify = require('slugify');
 
-import formatRootName from 'root-name';
-
 export class NameHelper {
 
     /**
@@ -113,10 +111,6 @@ export class NameHelper {
 
     static slug(text: string): string {
         return slugify(text);
-    }
-
-    static rootName(name: string, lang: string): string {
-        return formatRootName(name, lang);
     }
 
     /**
