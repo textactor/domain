@@ -13,17 +13,10 @@ export class NameHelper {
      * // uname === 'stefan cel mare si sfant'
      */
     static formatUniqueName(name: string, lang: string): string {
-        name = name.trim();
-        lang = lang.trim().toLowerCase();
-        name = removeSymbolsFromText(name);
-        name = standardText(name, lang);
-        name = atonic(name);
+        name = NameHelper.normalizeName(name, lang);
+        name = NameHelper.atonic(name);
 
-        if (NameHelper.isAbbr(name)) {
-            return name;
-        }
-
-        return name.toLowerCase();
+        return name;
     }
 
     static isValidUniqueName(name: string) {
@@ -110,6 +103,7 @@ export class NameHelper {
     }
 
     static slug(text: string): string {
+        text = NameHelper.normalizeName(text, 'en');
         return slugify(text);
     }
 
