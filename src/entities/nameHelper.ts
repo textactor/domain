@@ -48,7 +48,7 @@ export class NameHelper {
     }
 
     static isAbbr(name: string) {
-        return name.toUpperCase() === name;
+        return name.toLowerCase() !== name.toUpperCase() && name.toUpperCase() === name;
     }
 
     static findAbbr(names: string[]): string {

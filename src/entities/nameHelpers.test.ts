@@ -7,6 +7,7 @@ test('#isAbbr', t => {
     t.is(NameHelper.isAbbr('aBBR'), false, 'aBBR is not an abbreviation')
     t.is(NameHelper.isAbbr('A Abbr'), false, 'A Abbr is not an abbreviation')
     t.is(NameHelper.isAbbr('A ABBR'), true, 'A ABBR is an abbreviation')
+    t.is(NameHelper.isAbbr('189 & 9'), false, '189 & 9 not abbreviation')
 })
 
 test('#findAbbr', t => {
