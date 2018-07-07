@@ -1,3 +1,3 @@
 
 export { IReadRepository, IWriteRepository, IRepository, RepUpdateData } from './repository'
-export { IUseCase, UseCase } from './useCase'
+export { IUseCase, UseCase } from './usecase'

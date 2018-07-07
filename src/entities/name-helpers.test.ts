@@ -1,6 +1,6 @@
 
 import test from 'ava';
-import { NameHelper } from './nameHelper';
+import { NameHelper } from './name-helper';
 
 test('#isAbbr', t => {
     t.is(NameHelper.isAbbr('ABBR'), true, 'ABBR is an abbreviation')

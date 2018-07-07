@@ -9,8 +9,18 @@ export function uniq<T>(items: T[]) {
     return items.filter((value, index, self) => self.indexOf(value) === index);
 }
 
-export function seriesPromise<T, R>(arr: T[], iteratorFn: (item: T) => Promise<R>): Promise<R> {
-    return arr.reduce((p, item) => p.then(() => iteratorFn(item)), Promise.resolve(null));
+export function uniqByProp<T>(items: T[], prop: keyof T): T[] {
+    const map: { [index: string]: any } = {}
+    const list: T[] = []
+
+    for (let item of items) {
+        if (map[(<any>item)[prop]] === undefined) {
+            map[(<any>item)[prop]] = 1;
+            list.push(item)
+        }
+    }
+
+    return list;
 }
 
 export function mapPromise<T, R>(keys: T[], callback: (key: T) => Promise<R>):

@@ -51,9 +51,9 @@ export class NameHelper {
         return name.toLowerCase() !== name.toUpperCase() && name.toUpperCase() === name;
     }
 
-    static findAbbr(names: string[]): string {
+    static findAbbr(names: string[]): string | null {
         if (!names || names.length === 0) {
-            return;
+            return null;
         }
 
         const calcRank = (name: string) => {
@@ -80,6 +80,8 @@ export class NameHelper {
         if (abbrs.length) {
             return abbrs[0].name;
         }
+
+        return null;
     }
 
     /**
