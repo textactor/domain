@@ -1,7 +1,6 @@
 
 const atonic = require('atonic');
 const standardText = require('standard-text');
-const slugify = require('slugify');
 
 export class NameHelper {
 
@@ -102,11 +101,6 @@ export class NameHelper {
 
     static atonic(text: string): string {
         return atonic(text);
-    }
-
-    static slug(text: string): string {
-        text = NameHelper.normalizeName(text, 'en');
-        return slugify(text);
     }
 
     /**
