@@ -35,11 +35,11 @@
   "homepage": "https://github.com/textactor/domain#readme",
   "devDependencies": {
     "@types/joi": "^14.0.0",
-    "@types/node": "latest",
-    "ava": "^0.23.0",
-    "debug": "^3.1.0",
+    "@types/node": "10.12.3",
+    "ava": "^0.25.0",
+    "debug": "^4.1.0",
     "rimraf": "^2.6.2",
-    "typescript": "latest"
+    "typescript": "3.1.6"
   },
   "dependencies": {
     "atonic": "^1.0.4",
