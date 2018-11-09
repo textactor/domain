@@ -1,6 +1,4 @@
-
-const atonic = require('atonic');
-const standardText = require('standard-text');
+import { standardText, atonic } from "./utils";
 
 export class NameHelper {
 
