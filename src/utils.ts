@@ -68,3 +68,9 @@ export function getRandomInt(min: number, max: number) {
 export function getRandomIntInclusive(min: number, max: number) {
     return getRandomInt(min, max + 1);
 }
+
+export function unixTime(date?: Date) {
+    date = date || new Date();
+
+    return Math.floor(date.getTime() / 1000);
+}
