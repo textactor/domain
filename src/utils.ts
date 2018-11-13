@@ -74,3 +74,7 @@ export function unixTime(date?: Date) {
 
     return Math.floor(date.getTime() / 1000);
 }
+
+export function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
