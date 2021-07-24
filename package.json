@@ -1,6 +1,6 @@
 {
   "name": "@textactor/domain",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Text Actor code module",
   "main": "./dest/index.js",
   "types": "./dest/index.d.ts",
@@ -17,7 +17,7 @@
     "clean-test-code": "rimraf ./dest/**/*.test.js"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.0.0"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,6 @@
   },
   "homepage": "https://github.com/textactor/domain#readme",
   "devDependencies": {
-    "@types/joi": "^14.0.0",
     "@types/node": "10.12.3",
     "ava": "^0.25.0",
     "debug": "^4.1.0",
@@ -42,8 +41,8 @@
     "typescript": "3.1.6"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "atonic": "^1.0.4",
-    "joi": "^14.0.4",
     "standard-text": "^0.1.1"
   }
 }
